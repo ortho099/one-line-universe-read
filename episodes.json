@@ -24,5 +24,31 @@
     ],
     "minutes": 5,
     "url": "/one-line-universe-read/letters/plaster/"
+  },
+  {
+    "number": 2,
+    "slug": "tracing-paper",
+    "title": "薄紙",
+    "subtitle": "我哋想睇清楚門後面有乜，對面個細路卻想閂門。",
+    "summary": "父子用十年前的描字薄紙，留住一道不停改變的門。描得越清楚，兩人越不確定自己正在幫誰。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-10-24",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "寫字醜樣的問題－續－提升",
+        "url": "https://mykidnme.blogspot.com/2016/12/blog-post_22.html",
+        "date": "2016-12-22",
+        "connection": "由計快轉為計似、用薄紙覆住字帖描寫的練習，延伸成保存一幅會改變的畫的方法。薄紙上的異象與門後情節均屬虛構。"
+      },
+      {
+        "title": "寫字醜樣的問題－續",
+        "url": "https://mykidnme.blogspot.com/2016/11/blog-post_17.html",
+        "date": "2016-11-17",
+        "connection": "父子以寫一版字鬥快、父親三分零九秒的紀錄與手攰的細節，轉化成故事裡的計時器、辨認動作與一次判斷失誤。"
+      }
+    ],
+    "minutes": 6,
+    "url": "/one-line-universe-read/letters/tracing-paper/"
   }
 ]
