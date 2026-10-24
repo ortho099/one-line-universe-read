@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /one-line-universe-read/
+Sitemap: https://ortho099.github.io/one-line-universe-read/sitemap.xml

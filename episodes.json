@@ -1,0 +1,28 @@
+[
+  {
+    "number": 1,
+    "slug": "plaster",
+    "title": "膠布",
+    "subtitle": "2027 年元旦，我收到七歲兒子寄來的一行字。",
+    "summary": "一本十年前的日記，出現了仍然稚嫩的字跡。對面的細路，只想知道爸爸有沒有帶齊東西。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-10-21",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "中文太弱．續",
+        "url": "https://mykidnme.blogspot.com/2016/12/blog-post_20.html",
+        "date": "2016-12-20",
+        "connection": "日記可以只寫一行，寫不到可以畫圖。這份留有餘地的約定，成為故事裡穿越時間的規則。"
+      },
+      {
+        "title": "阿仔幫我執行李",
+        "url": "https://mykidnme.blogspot.com/2016/12/blog-post_9.html",
+        "date": "2016-12-09",
+        "connection": "兒子替出差的父親準備膠布、枇杷膏、紙巾和兩本書。這些真實細節，成為第一封信裡的行李。"
+      }
+    ],
+    "minutes": 5,
+    "url": "/one-line-universe-read/letters/plaster/"
+  }
+]
