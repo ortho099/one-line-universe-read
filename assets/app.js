@@ -80,6 +80,19 @@
     });
   }
 
+  const treasure = document.querySelector('[data-treasure]');
+  treasure?.addEventListener('click', () => {
+    const note = document.querySelector('[data-treasure-note]');
+    if (!note?.hidden) return;
+    const link = document.createElement('a');
+    link.href = 'https://ortho099.github.io/story-quest/';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = '打開寶箱 ↗';
+    note.append('你搵到喇。十年嘅故事，收埋喺呢度。', link);
+    note.hidden = false;
+  });
+
   const rainButton = document.querySelector('[data-rain]');
   let audio, noise, gain, playing = false;
   rainButton?.addEventListener('click', async () => {
