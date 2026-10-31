@@ -23,7 +23,21 @@
       }
     ],
     "minutes": 5,
-    "url": "/one-line-universe-read/letters/plaster/"
+    "url": "/one-line-universe-read/letters/plaster/",
+    "versions": {
+      "yue": {
+        "title": "膠布",
+        "url": "/one-line-universe-read/letters/plaster/"
+      },
+      "zh-Hant": {
+        "title": "膠布",
+        "url": "/one-line-universe-read/letters/plaster/zh-hant/"
+      },
+      "en": {
+        "title": "A Sticking Plaster",
+        "url": "/one-line-universe-read/letters/plaster/en/"
+      }
+    }
   },
   {
     "number": 2,
@@ -49,7 +63,21 @@
       }
     ],
     "minutes": 6,
-    "url": "/one-line-universe-read/letters/tracing-paper/"
+    "url": "/one-line-universe-read/letters/tracing-paper/",
+    "versions": {
+      "yue": {
+        "title": "薄紙",
+        "url": "/one-line-universe-read/letters/tracing-paper/"
+      },
+      "zh-Hant": {
+        "title": "薄紙",
+        "url": "/one-line-universe-read/letters/tracing-paper/zh-hant/"
+      },
+      "en": {
+        "title": "Tracing Paper",
+        "url": "/one-line-universe-read/letters/tracing-paper/en/"
+      }
+    }
   },
   {
     "number": 3,
@@ -75,6 +103,20 @@
       }
     ],
     "minutes": 6,
-    "url": "/one-line-universe-read/letters/empty-chair/"
+    "url": "/one-line-universe-read/letters/empty-chair/",
+    "versions": {
+      "yue": {
+        "title": "空凳",
+        "url": "/one-line-universe-read/letters/empty-chair/"
+      },
+      "zh-Hant": {
+        "title": "空凳",
+        "url": "/one-line-universe-read/letters/empty-chair/zh-hant/"
+      },
+      "en": {
+        "title": "The Empty Chair",
+        "url": "/one-line-universe-read/letters/empty-chair/en/"
+      }
+    }
   }
 ]
