@@ -50,5 +50,31 @@
     ],
     "minutes": 6,
     "url": "/one-line-universe-read/letters/tracing-paper/"
+  },
+  {
+    "number": 3,
+    "slug": "empty-chair",
+    "title": "空凳",
+    "subtitle": "紙上有一張凳，比我啱啱坐過嗰張矮咗一半。",
+    "summary": "父子試探薄紙上的背影，卻認出一張本來不在枱邊的舊矮凳。他們暫時不改畫，先留一個空位。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-10-31",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "差一分：我未開口，佢已經轉個 mon 過嚟",
+        "url": "https://mykidnme.blogspot.com/2026/10/mon.html",
+        "date": "2026-10-10",
+        "connection": "父親未開口，兒子已自己開始處理問題，並轉過螢幕展示進度；延伸成兒子先畫位置、先尋找舊凳的行動。紙上異象及人物對話均屬虛構。"
+      },
+      {
+        "title": "表達與記憶",
+        "url": "https://mykidnme.blogspot.com/2026/04/blog-post_19.html",
+        "date": "2026-04-19",
+        "connection": "先講結果或實際做法、再解釋，以及將零散細節連結的討論，轉化成父子用位置圖、凳背缺口與舊物辨認差異；沒有把插畫或跨時空情節當成真人紀錄。"
+      }
+    ],
+    "minutes": 6,
+    "url": "/one-line-universe-read/letters/empty-chair/"
   }
 ]
