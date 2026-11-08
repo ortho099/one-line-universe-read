@@ -118,5 +118,45 @@
         "url": "/one-line-universe-read/letters/empty-chair/en/"
       }
     }
+  },
+  {
+    "number": 4,
+    "slug": "half-beat",
+    "title": "半拍",
+    "subtitle": "有一下，唔打好似比打中更難。",
+    "summary": "紙上嘅鞋停停晃晃，父子用一隻膠碗試探聲音。他們未能確定對面聽見什麼，先學著留下半拍空白。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-11-07",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "打鼓．不讚叻只讚勤",
+        "url": "https://mykidnme.blogspot.com/2017/03/blog-post_29.html",
+        "date": "2017-03-29",
+        "connection": "原文記下兒子學過鋼琴、後來嘗試打鼓，以及父親藉書寫提醒自己持續關心；延伸成父子以筷子和膠碗嘗試一段節奏。具體節奏、成年後對話、紙上動作及凳下聲音均屬虛構。"
+      },
+      {
+        "title": "聽個仔讀書",
+        "url": "https://mykidnme.blogspot.com/2016/11/blog-post_22.html",
+        "date": "2016-11-22",
+        "connection": "原文記錄父親聽兒子讀中文和英文故事書，及對兩種語言朗讀的不同期望；轉化成故事裡父親對速度與停頓的反省。補字習慣、當晚聆聽及跨時空情節是小說延伸，不是原文補充紀錄。"
+      }
+    ],
+    "minutes": 6,
+    "url": "/one-line-universe-read/letters/half-beat/",
+    "versions": {
+      "yue": {
+        "title": "半拍",
+        "url": "/one-line-universe-read/letters/half-beat/"
+      },
+      "zh-Hant": {
+        "title": "半拍",
+        "url": "/one-line-universe-read/letters/half-beat/zh-hant/"
+      },
+      "en": {
+        "title": "Half a Beat",
+        "url": "/one-line-universe-read/letters/half-beat/en/"
+      }
+    }
   }
 ]
