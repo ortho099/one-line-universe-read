@@ -24,7 +24,10 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
 .music-number { color: var(--accent); font-size: 12px; padding-top: 7px; }
 .music-track h2 { font-size: 23px; }
 .music-track p { color: var(--muted); font-size: 13px; margin: 2px 0 10px; }
-.music-track audio { display: block; width: min(100%, 430px); }
+.music-track audio, .chapter-song audio { display: block; width: min(100%, 430px); }
+.chapter-song { width: min(584px, calc(100% - 40px)); margin: 32px auto 0; padding: 16px 20px; border: 1px solid var(--line); border-radius: 12px; }
+.chapter-song p { margin: 6px 0 10px; font-size: 18px; }
+.chapter-song a { display: inline-block; margin-top: 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 440px) {
   .music-nav { height: auto; min-height: 86px; padding-block: 12px; flex-wrap: wrap; }
   .music-nav .header-nav { gap: 13px; }
