@@ -32,6 +32,56 @@
     storage.set('theme', document.documentElement.dataset.theme);
     syncThemeButton();
   });
+  const audioPlayers = document.querySelectorAll('[data-local-audio]');
+  audioPlayers.forEach(player => player.addEventListener('play', () => {
+    audioPlayers.forEach(other => { if (other !== player) other.pause(); });
+  }));
+  const playlist = document.querySelector('[data-playlist]');
+  if (playlist) {
+    const tracks = Array.from(document.querySelectorAll('[data-playlist-src]'), row => row.dataset);
+    const player = playlist.querySelector('audio');
+    const start = playlist.querySelector('[data-playlist-start]');
+    const next = playlist.querySelector('[data-playlist-next]');
+    const status = playlist.querySelector('[data-playlist-status]');
+    let queue = [], current, selection = 0;
+
+    const playNext = async () => {
+      if (!queue.length) {
+        queue = tracks.slice();
+        for (let i = queue.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [queue[i], queue[j]] = [queue[j], queue[i]];
+        }
+        if (queue.length > 1 && queue[0] === current) [queue[0], queue[1]] = [queue[1], queue[0]];
+      }
+      current = queue.shift();
+      const attempt = ++selection;
+      status.textContent = '載入中 · ' + current.playlistTitle;
+      player.hidden = false;
+      player.src = current.playlistSrc;
+      next.disabled = false;
+      try {
+        await player.play();
+        if (selection === attempt) status.textContent = '播放中 · ' + current.playlistTitle;
+      } catch (error) {
+        if (selection === attempt) {
+          status.textContent = error.name === 'NotAllowedError'
+            ? '請撳播放器 ▶ 繼續 · ' + current.playlistTitle
+            : '呢首暫時播唔到，可以試下一首。';
+        }
+      }
+    };
+    start.addEventListener('click', () => { queue = []; return playNext(); });
+    next.addEventListener('click', playNext);
+    player.addEventListener('ended', playNext);
+    player.addEventListener('playing', () => {
+      if (current) status.textContent = '播放中 · ' + current.playlistTitle;
+    });
+    player.addEventListener('error', () => {
+      if (current) status.textContent = '呢首暫時播唔到，可以試下一首。';
+    });
+    playlist.hidden = tracks.length === 0;
+  }
   const initialFont = Math.max(17, Math.min(25, Number(storage.get('font', 20)) || 20));
   document.documentElement.style.setProperty('--font-size', initialFont + 'px');
   document.querySelectorAll('[data-font]').forEach(button => button.addEventListener('click', () => {

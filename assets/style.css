@@ -19,6 +19,12 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
 .music-page { max-width: 680px; padding-block: clamp(40px, 7vw, 86px); }
 .music-page h1 { font-size: clamp(35px, 7vw, 58px); line-height: 1.25; margin: 10px 0 16px; }
 .music-intro { color: var(--muted); margin-bottom: 32px; }
+.music-playlist { margin: 0 0 24px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; }
+.music-playlist-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.music-playlist p { color: var(--muted); font-size: 13px; margin: 8px 0; }
+.music-playlist p:empty { display: none; }
+.music-playlist audio, .music-audio { width: min(100%, 430px); }
+.music-audio { display: block; }
 .music-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .music-track { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .music-number { color: var(--accent); font-size: 12px; padding-top: 7px; }
