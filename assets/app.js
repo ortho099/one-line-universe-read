@@ -32,10 +32,6 @@
     storage.set('theme', document.documentElement.dataset.theme);
     syncThemeButton();
   });
-  const musicTracks = document.querySelectorAll('[data-music-track]');
-  musicTracks.forEach(track => track.addEventListener('play', () => {
-    musicTracks.forEach(other => { if (other !== track) other.pause(); });
-  }));
   const initialFont = Math.max(17, Math.min(25, Number(storage.get('font', 20)) || 20));
   document.documentElement.style.setProperty('--font-size', initialFont + 'px');
   document.querySelectorAll('[data-font]').forEach(button => button.addEventListener('click', () => {
