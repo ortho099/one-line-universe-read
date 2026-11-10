@@ -6,9 +6,9 @@
   };
   const language = ['yue','zh-Hant','en'].includes(document.body.dataset.language) ? document.body.dataset.language : 'yue';
   const copy = language === 'en' ? {
-    day:'Day',night:'Night',lightAria:'Switch to light reading',darkAria:'Switch to dark reading',read:'✓ Finished this letter',unread:'I have finished this letter',rainOn:'Rain on',rainOff:'Rain off',unsupported:'Not supported',found:'You found it. Ten years of stories are tucked away here.',open:'Open the treasure ↗'
+    day:'Day',night:'Night',lightAria:'Switch to light reading',darkAria:'Switch to dark reading',read:'✓ Finished this letter',unread:'I have finished this letter',rainOn:'Pause rain',rainOff:'Play rain',rainError:'Retry rain',found:'You found it. Ten years of stories are tucked away here.',open:'Open the treasure ↗'
   } : {
-    day:'日讀',night:'夜讀',lightAria:'切換淺色閱讀',darkAria:'切換深色閱讀',read:'✓ 已讀完這封信',unread:'我讀完這封信了',rainOn:'雨聲開',rainOff:'雨聲關',unsupported:'暫未支援',found:language==='zh-Hant'?'你找到了。十年的故事，藏在這裡。':'你搵到喇。十年嘅故事，收埋喺呢度。',open:'打開寶箱 ↗'
+    day:'日讀',night:'夜讀',lightAria:'切換淺色閱讀',darkAria:'切換深色閱讀',read:'✓ 已讀完這封信',unread:'我讀完這封信了',rainOn:'暫停雨聲',rainOff:'播放雨聲',rainError:'再試雨聲',found:language==='zh-Hant'?'你找到了。十年的故事，藏在這裡。':'你搵到喇。十年嘅故事，收埋喺呢度。',open:'打開寶箱 ↗'
   };
   if(document.body.dataset.episode)storage.set('language',language);
   const storedLanguage=storage.get('language','yue');
@@ -159,31 +159,39 @@
   });
 
   const rainButton = document.querySelector('[data-rain]');
-  let audio, noise, gain, playing = false;
-  rainButton?.addEventListener('click', async () => {
-    try {
-      if (!audio) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) throw new Error('unsupported');
-        audio = new AudioContext();
-        const buffer = audio.createBuffer(1, audio.sampleRate * 4, audio.sampleRate);
-        const data = buffer.getChannelData(0);
-        let last = 0;
-        for (let i = 0; i < data.length; i++) { const white = Math.random() * 2 - 1; last = (last + white * .04) / 1.04; data[i] = last * 3.5; }
-        noise = audio.createBufferSource(); noise.buffer = buffer; noise.loop = true;
-        const filter = audio.createBiquadFilter(); filter.type = 'lowpass'; filter.frequency.value = 2200;
-        gain = audio.createGain(); gain.gain.value = 0;
-        noise.connect(filter).connect(gain).connect(audio.destination); noise.start();
-      }
-      await audio.resume();
-      playing = !playing;
-      gain.gain.cancelScheduledValues(audio.currentTime);
-      gain.gain.setTargetAtTime(playing ? .16 : 0, audio.currentTime, .4);
+  if (rainButton) {
+    const label = rainButton.querySelector('[data-rain-label]');
+    let rain;
+    const updateRain = playing => {
       rainButton.setAttribute('aria-pressed', String(playing));
-      rainButton.querySelector('[data-rain-label]').textContent = playing ? copy.rainOn : copy.rainOff;
-    } catch {
-      rainButton.querySelector('[data-rain-label]').textContent = copy.unsupported;
-      rainButton.disabled = true;
-    }
-  });
+      label.textContent = playing ? copy.rainOn : copy.rainOff;
+    };
+    const rainError = () => {
+      updateRain(false);
+      label.textContent = copy.rainError;
+    };
+    rainButton.addEventListener('click', async () => {
+      if (!rain) {
+        rain = new Audio();
+        rain.preload = 'none';
+        rain.loop = true;
+        rain.src = rainButton.dataset.rainSrc;
+        rain.onplaying = () => updateRain(true);
+        rain.onpause = () => updateRain(false);
+        rain.onerror = rainError;
+      }
+      if (!rain.paused) {
+        rain.pause();
+        updateRain(false);
+        return;
+      }
+      try {
+        if (rain.error) rain.load();
+        await rain.play();
+        updateRain(!rain.paused);
+      } catch (error) {
+        if (error.name !== 'AbortError') rainError();
+      }
+    });
+  }
 })();

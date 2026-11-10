@@ -16,6 +16,8 @@ a{color:inherit;text-decoration:none}a,button{-webkit-tap-highlight-color:transp
 body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
 .treasure{display:none;border:0;background:transparent;color:var(--accent);padding:10px;margin:-10px 0 -10px 2px;font-size:13px;line-height:1;opacity:.55;animation:treasure-glow 3.6s ease-in-out infinite}[data-theme="dark"] .treasure{display:inline-block}.treasure:hover,.treasure:focus-visible{opacity:1;animation:none}.treasure:focus-visible{outline-offset:-8px}@keyframes treasure-glow{50%{opacity:1}}.treasure-note{display:block;margin-top:10px;color:var(--accent);font-size:12px}.treasure-note[hidden]{display:none}.treasure-note a{margin-left:8px;text-decoration:underline;text-underline-offset:4px}
 
+.hero-actions { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+.hero-actions .rain-button { min-height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 4px; font-size: 12px; }
 .music-page { max-width: 680px; padding-block: clamp(40px, 7vw, 86px); }
 .music-page h1 { font-size: clamp(35px, 7vw, 58px); line-height: 1.25; margin: 10px 0 16px; }
 .music-intro { color: var(--muted); margin-bottom: 32px; }
