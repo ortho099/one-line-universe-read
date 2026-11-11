@@ -31,8 +31,7 @@
         if (!response.ok) return;
         const { total } = await response.json();
         if (!Number.isSafeInteger(total) || total < 0) return;
-        const count = new Intl.NumberFormat(language === 'en' ? 'en' : 'zh-Hant').format(total);
-        viewBadge.textContent = language === 'en' ? `${count} page views` : `累計 ${count} 次瀏覽`;
+        viewBadge.textContent = new Intl.NumberFormat(language === 'en' ? 'en' : 'zh-Hant').format(total);
         viewBadge.hidden = false;
       } catch {
         // Keep the badge hidden when the counter is unavailable.
