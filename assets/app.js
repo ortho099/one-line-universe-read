@@ -15,6 +15,32 @@
   const preferred=['yue','zh-Hant','en'].includes(storedLanguage)?storedLanguage:'yue';
   const suffix={yue:'','zh-Hant':'zh-hant/',en:'en/'};
   const siteBase=document.querySelector('meta[name="site-base-path"]')?.content || '/';
+  const viewBadge = document.querySelector('[data-view-count]');
+  if (viewBadge) {
+    const showViews = async () => {
+      if (document.visibilityState !== 'visible') return;
+      document.removeEventListener('visibilitychange', showViews);
+      try {
+        const optedOut = navigator.globalPrivacyControl || navigator.doNotTrack === '1';
+        const response = await fetch(viewBadge.dataset.viewCount, {
+          method: optedOut ? 'GET' : 'POST',
+          credentials: 'omit',
+          referrerPolicy: 'no-referrer',
+          keepalive: true,
+        });
+        if (!response.ok) return;
+        const { total } = await response.json();
+        if (!Number.isSafeInteger(total) || total < 0) return;
+        const count = new Intl.NumberFormat(language === 'en' ? 'en' : 'zh-Hant').format(total);
+        viewBadge.textContent = language === 'en' ? `${count} page views` : `累計 ${count} 次瀏覽`;
+        viewBadge.hidden = false;
+      } catch {
+        // Keep the badge hidden when the counter is unavailable.
+      }
+    };
+    document.addEventListener('visibilitychange', showViews);
+    void showViews();
+  }
   document.querySelectorAll('[data-language-target]').forEach(link=>{
     if(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(link.dataset.languageTarget))link.setAttribute('href',siteBase+'letters/'+link.dataset.languageTarget+'/'+suffix[preferred]);
   });
