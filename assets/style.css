@@ -61,7 +61,18 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
 }
 
 .view-count {
-  display: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  min-width: 0;
+  padding-inline: 1px;
+}
+.view-count[hidden] { display: none; }
+.view-stamp {
+  display: inline-grid;
+  flex: none;
   width: 13px;
   height: 15px;
   place-content: center;
@@ -71,15 +82,12 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
   color: var(--muted);
   transform: rotate(-6deg);
 }
-.view-count[data-marks]:not([hidden]) { display: inline-grid; }
-.view-count::before {
+.view-stamp::before {
   content: "";
   width: 5px;
   height: 1px;
   background: currentColor;
   transform: translateY(-3px);
 }
-.view-count[data-marks="0"]::before { visibility: hidden; }
-.view-count[data-marks="2"]::before { box-shadow: 0 2px currentColor; }
-.view-count[data-marks="3"]::before { box-shadow: 0 2px currentColor, 0 4px currentColor; }
-.view-count[data-marks="4"]::before { box-shadow: 0 2px currentColor, 0 4px currentColor, 0 6px currentColor; }
+.view-stamp--gold { color: #8d671f; background: #c3923026; }
+[data-theme="dark"] .view-stamp--gold { color: #dbb96d; }

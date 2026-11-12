@@ -30,8 +30,16 @@
         });
         if (!response.ok) return;
         const { total } = await response.json();
-        if (!Number.isSafeInteger(total) || total < 0) return;
-        viewBadge.dataset.marks = String([1, 10, 50, 100].filter(minimum => total >= minimum).length);
+        if (!Number.isSafeInteger(total) || total < 100) return;
+        const gold = Math.floor(total / 1000);
+        const regular = Math.floor((total % 1000) / 100);
+        const stamps = document.createDocumentFragment();
+        for (let index = 0; index < gold + regular; index++) {
+          const stamp = document.createElement('span');
+          stamp.className = index < gold ? 'view-stamp view-stamp--gold' : 'view-stamp';
+          stamps.append(stamp);
+        }
+        viewBadge.replaceChildren(stamps);
         viewBadge.hidden = false;
       } catch {
         // Keep the badge hidden when the counter is unavailable.
