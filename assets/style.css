@@ -38,6 +38,22 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
 .chapter-song { width: min(584px, calc(100% - 40px)); margin: 32px auto 0; padding: 16px 20px; border: 1px solid var(--line); border-radius: 12px; }
 .chapter-song p { margin: 6px 0 10px; font-size: 18px; }
 .chapter-song a { display: inline-block; margin-top: 10px; color: var(--muted); font-size: 13px; }
+.comics-page { max-width: 700px; padding-block: clamp(40px, 7vw, 86px); }
+.comics-page h1 { font-size: clamp(35px, 7vw, 58px); line-height: 1.25; margin-bottom: 16px; }
+.comics-index { display: flex; flex-wrap: wrap; gap: 4px 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.comics-index a, .comic header a { font-size: 13px; color: var(--muted); }
+.comics-index a { padding-block: 7px; }
+.comics-index a:hover, .comic header a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.comic { margin-top: clamp(28px, 5vw, 54px); scroll-margin-top: 20px; }
+.comic header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.comic h2 { font-size: clamp(22px, 4vw, 29px); }
+.comic-image { display: block; }
+.comic-image:focus-visible { outline-offset: 5px; }
+.comic-image img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; }
+@media (max-width: 500px) {
+  .comics-nav { height: auto; min-height: 86px; padding-block: 12px; flex-wrap: wrap; }
+  .comics-nav .header-nav { gap: 13px; flex-wrap: wrap; }
+}
 @media (max-width: 440px) {
   .music-nav { height: auto; min-height: 86px; padding-block: 12px; flex-wrap: wrap; }
   .music-nav .header-nav { gap: 13px; }
