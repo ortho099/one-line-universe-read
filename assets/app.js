@@ -31,7 +31,7 @@
         if (!response.ok) return;
         const { total } = await response.json();
         if (!Number.isSafeInteger(total) || total < 0) return;
-        viewBadge.textContent = new Intl.NumberFormat(language === 'en' ? 'en' : 'zh-Hant').format(total);
+        viewBadge.dataset.marks = String([1, 10, 50, 100].filter(minimum => total >= minimum).length);
         viewBadge.hidden = false;
       } catch {
         // Keep the badge hidden when the counter is unavailable.
