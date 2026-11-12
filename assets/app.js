@@ -30,13 +30,15 @@
         });
         if (!response.ok) return;
         const { total } = await response.json();
-        if (!Number.isSafeInteger(total) || total < 100) return;
+        if (!Number.isSafeInteger(total) || total < 0) return;
         const gold = Math.floor(total / 1000);
         const regular = Math.floor((total % 1000) / 100);
+        const marks = total < 100 ? String([1, 10, 50].filter(minimum => total >= minimum).length) : '4';
         const stamps = document.createDocumentFragment();
-        for (let index = 0; index < gold + regular; index++) {
+        for (let index = 0; index < Math.max(1, gold + regular); index++) {
           const stamp = document.createElement('span');
           stamp.className = index < gold ? 'view-stamp view-stamp--gold' : 'view-stamp';
+          stamp.dataset.marks = marks;
           stamps.append(stamp);
         }
         viewBadge.replaceChildren(stamps);

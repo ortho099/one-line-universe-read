@@ -89,5 +89,9 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
   background: currentColor;
   transform: translateY(-3px);
 }
+.view-stamp[data-marks="0"]::before { visibility: hidden; }
+.view-stamp[data-marks="2"]::before { box-shadow: 0 2px currentColor; }
+.view-stamp[data-marks="3"]::before { box-shadow: 0 2px currentColor, 0 4px currentColor; }
+.view-stamp[data-marks="4"]::before { box-shadow: 0 2px currentColor, 0 4px currentColor, 0 6px currentColor; }
 .view-stamp--gold { color: #8d671f; background: #c3923026; }
 [data-theme="dark"] .view-stamp--gold { color: #dbb96d; }
