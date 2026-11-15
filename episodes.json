@@ -158,5 +158,39 @@
         "url": "/one-line-universe-read/letters/half-beat/en/"
       }
     }
+  },
+  {
+    "number": 5,
+    "slug": "door-saucer",
+    "title": "門邊的白碟",
+    "subtitle": "同一聲，兩個人聽到嘅地方唔同。",
+    "summary": "空凳下的聲音剛停，薄紙上只剩一隻小丑拖鞋。父子把一隻白碟放在門邊，等到一點說不出從哪裡來的水。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-11-14",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "英文發音：小丑．皇冠；Synonym同義字",
+        "url": "https://mykidnme.blogspot.com/2017/03/synonym.html",
+        "date": "2017-03-30",
+        "connection": "原文記下父親遲回家，看見門口換了一雙小丑拖鞋，兒子教他分辨 clown 和 crown 的讀音。故事借用拖鞋和讀音，紙上鞋子的變化、成年父子的對話及門邊的水都屬虛構。"
+      }
+    ],
+    "minutes": 6,
+    "url": "/one-line-universe-read/letters/door-saucer/",
+    "versions": {
+      "yue": {
+        "title": "門邊的白碟",
+        "url": "/one-line-universe-read/letters/door-saucer/"
+      },
+      "zh-Hant": {
+        "title": "門邊的白碟",
+        "url": "/one-line-universe-read/letters/door-saucer/zh-hant/"
+      },
+      "en": {
+        "title": "The Saucer by the Door",
+        "url": "/one-line-universe-read/letters/door-saucer/en/"
+      }
+    }
   }
 ]
