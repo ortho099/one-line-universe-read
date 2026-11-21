@@ -192,5 +192,39 @@
         "url": "/one-line-universe-read/letters/door-saucer/en/"
       }
     }
+  },
+  {
+    "number": 6,
+    "slug": "lower-mirror",
+    "title": "低一點",
+    "subtitle": "面鏡高咗，原來真係睇唔到。",
+    "summary": "一面舊手鏡令父親記起替兒子剪髮的晚上。日記裡的小人披上一塊布，窗後的大手再次出現，指間似乎夾著一樣熟悉的東西。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-11-21",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "幫個仔剪頭髮",
+        "url": "https://mykidnme.blogspot.com/2017/03/blog-post_6.html",
+        "date": "2017-03-06",
+        "connection": "原文記錄父親學替兒子剪頭髮，先學好兩邊，再看影片練習，並笑稱自己有八成功力。故事借用剪髮回憶與這個數字；手鏡、膠布勾領口、日記人物與窗後動作均屬虛構。"
+      }
+    ],
+    "minutes": 6,
+    "url": "/one-line-universe-read/letters/lower-mirror/",
+    "versions": {
+      "yue": {
+        "title": "低一點",
+        "url": "/one-line-universe-read/letters/lower-mirror/"
+      },
+      "zh-Hant": {
+        "title": "低一點",
+        "url": "/one-line-universe-read/letters/lower-mirror/zh-hant/"
+      },
+      "en": {
+        "title": "Lower a Little",
+        "url": "/one-line-universe-read/letters/lower-mirror/en/"
+      }
+    }
   }
 ]
