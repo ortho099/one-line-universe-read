@@ -15,47 +15,6 @@
   const preferred=['yue','zh-Hant','en'].includes(storedLanguage)?storedLanguage:'yue';
   const suffix={yue:'','zh-Hant':'zh-hant/',en:'en/'};
   const siteBase=document.querySelector('meta[name="site-base-path"]')?.content || '/';
-  const comics = document.querySelector('[data-comics]');
-  if (comics) {
-    const pages = Array.from(comics.querySelectorAll('[data-comic-page]'));
-    const indexLinks = comics.querySelectorAll('.comics-index a');
-    const pager = comics.querySelector('.comics-pager');
-    const position = pager.querySelector('[data-comic-position]');
-    const buttons = pager.querySelectorAll('[data-comic-step]');
-    let current = -1;
-
-    const showComic = () => {
-      const index = Math.max(0, pages.findIndex(page => '#' + page.id === location.hash));
-      if (index === current) return;
-      const page = pages[index];
-      const imageLink = page.querySelector('.comic-image');
-      const template = imageLink.querySelector('template');
-      if (template) imageLink.replaceChildren(template.content);
-      pages.forEach(comic => { comic.hidden = comic !== page; });
-      indexLinks.forEach((link, i) => {
-        if (i === index) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
-      });
-      position.textContent = `${index + 1} / ${pages.length}`;
-      buttons.forEach(button => {
-        const destination = index + Number(button.dataset.comicStep);
-        button.disabled = !pages[destination];
-      });
-      if (current !== -1 && page.getBoundingClientRect().top < pager.getBoundingClientRect().bottom) {
-        page.scrollIntoView({block: 'start'});
-      }
-      current = index;
-    };
-
-    showComic();
-    pager.hidden = pages.length < 2;
-    comics.classList.add('comics-ready');
-    buttons.forEach(button => button.addEventListener('click', () => {
-      const page = pages[current + Number(button.dataset.comicStep)];
-      if (page) location.hash = page.id;
-    }));
-    window.addEventListener('hashchange', showComic);
-  }
   const viewBadge = document.querySelector('[data-view-count]');
   if (viewBadge) {
     const showViews = async () => {
