@@ -43,13 +43,22 @@ body[data-language="en"] .sources::before{content:"ORIGIN / INSPIRATION"}
 .comics-index { display: flex; flex-wrap: wrap; gap: 4px 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 .comics-index a, .comic header a { font-size: 13px; color: var(--muted); }
 .comics-index a { padding-block: 7px; }
-.comics-index a:hover, .comic header a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
-.comic { margin-top: clamp(28px, 5vw, 54px); scroll-margin-top: 20px; }
+.comics-index a:hover, .comics-index a[aria-current], .comic header a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.comics-pager:not([hidden]) { position: sticky; top: 0; z-index: 2; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding: 10px 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+.comics-pager button { justify-self: start; padding-inline: 12px; }
+.comics-pager button:last-child { justify-self: end; }
+.comics-pager button:disabled { opacity: .55; border-color: var(--line); }
+.comics-pager [role="status"] { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.comic { margin-top: clamp(24px, 4vw, 36px); scroll-margin-top: 78px; }
 .comic header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
 .comic h2 { font-size: clamp(22px, 4vw, 29px); }
-.comic-image { display: block; }
+.comic-image { display: block; color: var(--accent); }
 .comic-image:focus-visible { outline-offset: 5px; }
-.comic-image img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; }
+.comic-image img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 2px; background: var(--paper-deep); }
+@media (prefers-reduced-motion: no-preference) {
+  .comics-ready .comic:not([hidden]) .comic-image { animation: comic-turn .24s ease-out; transform-origin: left center; }
+  @keyframes comic-turn { from { opacity: .55; transform: perspective(1000px) rotateY(-12deg); } }
+}
 @media (max-width: 500px) {
   .comics-nav { height: auto; min-height: 86px; padding-block: 12px; flex-wrap: wrap; }
   .comics-nav .header-nav { gap: 13px; flex-wrap: wrap; }
