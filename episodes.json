@@ -226,5 +226,39 @@
         "url": "/one-line-universe-read/letters/lower-mirror/en/"
       }
     }
+  },
+  {
+    "number": 7,
+    "slug": "the-small-mark",
+    "title": "留低嗰一點",
+    "subtitle": "唔係每粒黑色，都應該擦走。",
+    "summary": "紙上小鏡裡多了一點黑，父親伸手想拿擦膠。兒子讓一粒鉛筆碎從收據上滑落，留下的那一點卻開始有了輪廓。",
+    "universe": "日記宇宙 · 001",
+    "published": "2026-11-28",
+    "storyDate": "2027 年 1 月 1 日",
+    "sources": [
+      {
+        "title": "仔仔教中文：幾時用「今．令」",
+        "url": "https://mykidnme.blogspot.com/2017/03/blog-post_5.html",
+        "date": "2017-03-05",
+        "connection": "原文記錄兒子以「今」和「令」的一點及字音差別，反過來考父親。故事借用一個細微筆畫會改變判讀的日常；收據、鉛筆碎、鏡中指頭、窗後手與膠布線索，以及成年父子對話均屬虛構。"
+      }
+    ],
+    "minutes": 6,
+    "url": "/one-line-universe-read/letters/the-small-mark/",
+    "versions": {
+      "yue": {
+        "title": "留低嗰一點",
+        "url": "/one-line-universe-read/letters/the-small-mark/"
+      },
+      "zh-Hant": {
+        "title": "留下的那一點",
+        "url": "/one-line-universe-read/letters/the-small-mark/zh-hant/"
+      },
+      "en": {
+        "title": "The Mark That Stayed",
+        "url": "/one-line-universe-read/letters/the-small-mark/en/"
+      }
+    }
   }
 ]
